@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+:root {
+    --dark: #2B2B2B;
+    --darkGrey: #424242;
+    --darkGrey-hover: #5c5c5c;
+    --border: #7c7c7c;
+    --orange: #dc8c00;
+    --orange-hover: #ac6d00;
+    --bgDark: #3b3b3b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    font-family: 'Poiret One', cursive;
+    font-size: 1.05em;
+}
+
+ul {
+    list-style: none;
+}
+
+body .calculator_container {
+    width: 100vw;
+    height: 100vh;
+    /* Center vertically and horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark);
+}
+
+button,
+.tile_history>li {
+    cursor: pointer;
+}
+
+.calc {
+    width: 800px;
+    max-height: 364px;
+    /* border: 2px solid var(--border); */
+    display: flex;
+    flex-direction: row;
+    color: #eeeeee;
+    border: 2px solid var(--border);
+}
+
+.calc_container {
+    width: 70%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--darkGrey);
+    border-right: 2px solid var(--border);
+}
+
+.display {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /* border-right: 2px solid var(--border); */
+    padding: 5px;
+}
+
+.display_input {
+    font-size: smaller;
+    color: #a1a1a1;
+}
+
+.display_result {
+    font-size: 1.8em;
+}
+
+.tile_calc_basic {
+    width: 100%;
+    /* border-right: 2px solid var(--border); */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    align-items: center;
+    justify-items: center;
+}
+
+.calc_button {
+    box-sizing: border-box;
+    width: 100%;
+    /* border: 1px solid var(--darkGrey); */
+    /* border-top: 1px;
+    border-right: 1px;
+    border-style: solid;
+    border-color: var(--border); */
+    color: #eeeeee;
+    padding: 15px 5px;
+}
+
+.calc_button:nth-of-type(1) {
+    grid-column: 1 / span 2;
+}
+
+.calc_button:nth-child(16) {
+    grid-column: 1 / span 3;
+}
+
+.calc_button:nth-child(3),
+.calc_button:nth-child(7),
+.calc_button:nth-child(11),
+.calc_button:nth-child(15),
+.calc_button:nth-child(17) {
+    background-color: var(--orange);
+    /* border: 0 0 2px 0 solid var(--border); */
+}
+
+.calc_button:nth-child(3):hover,
+.calc_button:nth-child(7):hover,
+.calc_button:nth-child(11):hover,
+.calc_button:nth-child(15):hover,
+.calc_button:nth-child(17):hover {
+    background-color: var(--orange-hover);
+}
+
+.calc_button:nth-child(1):hover,
+.calc_button:nth-child(2):hover,
+.calc_button:nth-child(16):hover {
+    background-color: var(--darkGrey-hover);
+}
+
+.number:hover,
+.tile_history>li:hover {
+    background-color: var(--darkGrey-hover);
+}
+
+.operator {
+    /* background-color: var(--orange); */
+}
+
+.tile_history {
+    width: 30%;
+    max-height: 100%;
+    /* display: flex;
+    flex-direction: column;
+    align-items: flex-end; */
+    /* background-color: var(--dark); */
+    overflow-y: scroll;
+}
+
+.tile_history::-webkit-scrollbar {
+    /* Hides scrollbar but keeps functionality */
+    display: none;
+}
+
+.tile_history>li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    border-bottom: 2px solid var(--border);
+    background-color: var(--darkGrey);
+    padding: 10px 5px;
+}
+
+.tile_history p {
+    font-size: small;
+}
